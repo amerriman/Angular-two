@@ -49,8 +49,6 @@ app.factory('ContactList', function() {
   };
 
 
-
-
   ContactList.findContact = function(scope, id) {
  //TODO
   };

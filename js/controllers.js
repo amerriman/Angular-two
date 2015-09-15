@@ -1,6 +1,7 @@
-app.controller('myController', function($scope) {
+app.controller('myController', ['$scope', function($scope) {
   $scope.greeting = "Hello World!";
-});
+}]);
+
 
 
 app.controller('DogsController', function($scope){
@@ -93,6 +94,7 @@ app.controller('moviesController', ['$scope', '$http', function($scope, $http){
   $scope.none = false;
 
   $scope.findMovie = function(){
+    // console.log("You clicked me")
     var movieTitle = $scope.movieTitle;
     $scope.none = false;
     console.log($scope.movieTitle);
