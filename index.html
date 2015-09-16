@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Boilerplate</title>
+  <!-- styles -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+  <body>
+    <div class="container">
+      <div ng-controller="myController" ng-model="initialText">
+        <h1>Say something</h1>
+        <br>
+        <input type="text" ng-model="greeting"></p>
+        <p>{{ greeting }}</p>
+      <!-- add content here -->
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src ='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+  </body>
+</html>
