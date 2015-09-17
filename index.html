@@ -9,13 +9,21 @@
 </head>
   <body>
     <div class="container">
+
+        <h1>NAVBAR</h1>
+        <div ng-view></div>
+        <h1>FOOTER</h1>
       <div ng-controller="myController" ng-model="initialText">
         <h1>Say something</h1>
         <br>
         <input type="text" ng-model="greeting"></p>
         <p>{{ greeting }}</p>
       <!-- add content here -->
+
+
+
       </div>
+
     </div>
     <!-- scripts -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>

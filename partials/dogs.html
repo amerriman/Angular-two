@@ -1,0 +1,16 @@
+<div ng-controller="DogsController">
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Type of Dog</th>
+            <th>Friendly?</th>
+            <!-- <th>Phone</th> -->
+        </tr>
+    </thead>
+        <tr ng-repeat="dog in dogs ">
+            <td> {{dog.type}}</td>
+            <td> {{dog.friendly}}</td>
+          <!--   <td> {{dog.phone}}</td> -->
+        </tr>
+</table>
+</div>
