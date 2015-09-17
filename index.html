@@ -10,15 +10,40 @@
   <body>
     <div class="container">
 
-        <h1>NAVBAR</h1>
-        <div ng-view></div>
-        <h1>FOOTER</h1>
+
       <div ng-controller="myController" ng-model="initialText">
-        <h1>Say something</h1>
+      <!-- initial display -->
+<!--         <h1>Say something</h1>
         <br>
         <input type="text" ng-model="greeting"></p>
-        <p>{{ greeting }}</p>
-      <!-- add content here -->
+        <p>{{ greeting }}</p> -->
+
+      <!-- Portfolio exercise -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+   <!--          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div> -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav nav-tabs">
+                <li ><a href="/#/portfolio">Portfolio</a></li>
+                <li ><a href="/#/project">Projects</a></li>
+                <li ><a href="/#/resume">Resume</a></li>
+              </ul>
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div ng-view></div>
+
 
 
 

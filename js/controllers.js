@@ -21,5 +21,18 @@ app.controller('DogsController', function($scope){
 });
 
 app.controller('HomeController', function($scope){
-  $scope.message = "tacos"
+  $scope.message = "tacos";
+});
+
+
+app.controller('ResumeController', function($scope){
+  $scope.message = "resume";
+});
+
+app.controller('ProjectController', function($scope){
+  $scope.message = "project";
+});
+
+app.controller('PortfolioController', function($scope){
+  $scope.message = "portfolio";
 });

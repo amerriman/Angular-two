@@ -10,6 +10,18 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/dogs.html',
         controller: 'DogsController'
       })
+      .when('/portfolio', {
+        templateUrl: '/partials/portfolio.html',
+        controller: 'PortfolioController'
+      })
+      .when('/project', {
+        templateUrl: 'partials/project.html',
+        controller: 'ProjectController'
+      })
+      .when('/resume', {
+        templateUrl: 'partials/resume.html',
+        controller: 'ResumeController'
+      })
       .otherwise( {
         redirectTo: '/'
       });
