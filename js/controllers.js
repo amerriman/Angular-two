@@ -36,3 +36,16 @@ app.controller('ProjectController', function($scope){
 app.controller('PortfolioController', function($scope){
   $scope.message = "portfolio";
 });
+
+app.controller('CalculatorController', function($scope, $route, $routeParams){
+
+  var operator = $routeParams.operator;
+  var numA = $routeParams.numA;
+  var numB = $routeParams.numB;
+
+  if(operator === "add"){
+    $scope.solution = parseInt(numA) + parseInt(numB);
+  } else if(operator === "divide"){
+      $scope.solution = parseInt(numA) / parseInt(numB);
+  }
+});

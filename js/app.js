@@ -22,7 +22,23 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/resume.html',
         controller: 'ResumeController'
       })
-      .otherwise( {
-        redirectTo: '/'
+      // .when('/calculator/:operator/:numA/:numB', {
+      //   templateUrl: 'partials/calculator.html',
+      //   controller: 'CalculatorController'
+      // })
+      .when('/calculator/:operator/:numA/:numB?', {
+      templateUrl: 'partials/calculator.html',
+      controller: 'CalculatorController'
       });
+      // .otherwise( {
+      //   redirectTo: '/'
+      // });
 });
+
+
+// Given:
+// URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby
+// Route: /Chapter/:chapterId/Section/:sectionId
+//
+// Then
+// $routeParams ==> {chapterId:'1', sectionId:'2', search:'moby'}
