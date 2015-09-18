@@ -1,6 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: 'partials/home.html',
@@ -22,17 +23,21 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/resume.html',
         controller: 'ResumeController'
       })
-      // .when('/calculator/:operator/:numA/:numB', {
-      //   templateUrl: 'partials/calculator.html',
-      //   controller: 'CalculatorController'
-      // })
-      .when('/calculator/:operator/:numA/:numB?', {
+      .when('/calculator/:operator/:numA/:numB', {
+        templateUrl: 'partials/calculator.html',
+        controller: 'CalculatorController'
+      })
+      //not working
+      .when('/calculator/add/?x=4&y=10', {
       templateUrl: 'partials/calculator.html',
-      controller: 'CalculatorController'
+      controller: 'CalculatorController2'
+      })
+      .otherwise( {
+        redirectTo: '/'
       });
-      // .otherwise( {
-      //   redirectTo: '/'
-      // });
+
+ $locationProvider.html5Mode(true);
+
 });
 
 

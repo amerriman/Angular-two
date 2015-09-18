@@ -49,3 +49,10 @@ app.controller('CalculatorController', function($scope, $route, $routeParams){
       $scope.solution = parseInt(numA) / parseInt(numB);
   }
 });
+
+//Not Working
+app.controller('CalculatorController2', function($scope, $location){
+  var numX = $location.search().x;
+  console.log(numX);
+
+});
