@@ -10,12 +10,14 @@
 </head>
   <body>
     <div class="container">
+
       <div ng-controller="myController" ng-model="initialText">
       <!-- initial display -->
-  <!--       <h1>Say something</h1>
+ <!--        <h1>Say something</h1>
         <br>
         <input type="text" ng-model="greeting"></p>
         <p>{{ greeting }}</p> -->
+        <!-- end initial display -->
 
       <!-- Portfolio exercise -->
 <!--         <nav class="navbar navbar-default">
@@ -30,12 +32,15 @@
           </div>
         </nav> -->
         <!-- End portfolio exercise -->
-        <h3>TEST</h3>
-        <div ng-view></div>
-        <h3>END TEST</h3>
-
 
       </div>
+
+      <h3>START</h3>
+      <div ng-view></div>
+      <h3>END</h3>
+
+
+
     </div>
     <!-- scripts -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
