@@ -37,6 +37,7 @@ app.controller('PortfolioController', function($scope){
   $scope.message = "portfolio-testing";
 });
 
+
 app.controller('CalculatorController', function($scope, $route, $routeParams){
 
   var operator = $routeParams.operator;
@@ -49,8 +50,6 @@ app.controller('CalculatorController', function($scope, $route, $routeParams){
       $scope.solution = parseInt(numA) / parseInt(numB);
   }
 });
-
-
 
 app.controller('test', function($scope){
   $scope.message = "HOLA";
@@ -84,6 +83,40 @@ app.controller('Api', function($scope, $http){
         $scope.confirm = "Success!";
     });
   };
+
+});
+
+app.controller('moviesController', function($scope, $http){
+  $scope.allMovies = false;
+  $scope.singleMovie = false;
+
+  $scope.findMovie = function(){
+    var movieTitle = $scope.movieTitle;
+    console.log($scope.movieTitle);
+    $http.get('http://www.omdbapi.com/?type=movie&s='+ movieTitle)
+      .success(function(data){
+        $scope.movies = data.Search;
+        console.log($scope.movies);
+    $scope.allMovies = true;
+
+
+        //get the imdbID from the json for each movie so the user can get more info on click
+
+        //make each title clickable and on that click it does an in-depth search with the imdbid
+      });
+  };
+
+
+
+  $scope.movieDetails = function(){
+    $scope.allMovies = false;
+    $scope.singleMovie = true;
+    $http.get('http://www.omdbapi.com/?i='+ this.movie.imdbID+'&plot=full&r=json').success(function(data){
+    $scope.singleMovie = data;
+    console.log($scope.singleMovie);
+    });
+  };
+
 
 });
 

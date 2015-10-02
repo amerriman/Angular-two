@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col col-md-4 col-md-offset-4 centered">
+    <h3>Angular OMDb API Search</h3>
+    <form role="form">
+      <div class="form-group">
+        <label for="movieSearch">Search for a movie by title:</label>
+        <input type="text" class="form-control" id="movieSearch" placeholder="Movie..." name="movieTitle" ng-model="movieTitle">
+      </div>
+      <button type="submit" ng-click="findMovie()" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
+<br>
+
+<div class="row" ng-show="allMovies">
+  <div class="col col-md-10 col-md-offset-1 centered">
+    <!-- <h3>Results</h3> -->
+    <div ng-repeat="movie in movies" class="blocks">
+      <div class="outline">
+      <br>
+        <h4><a ng-click="movieDetails()" title="">{{movie.Title}}</a></h4>
+        <h5>Year: {{movie.Year}}</h5>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+<div class="row" ng-show="singleMovie">
+<br>
+  <div class="col col-md-8 col-md-offset-2 centered outline">
+      <!-- <div class="" -->
+        <h2>{{singleMovie.Title}}</h2>
+        <div class="col col-md-5 left">
+          <img ng-src="{{singleMovie.Poster}}" alt="Movie Poster" width="100%" height="auto">
+        </div>
+        <div class="col col-md-7 left">
+          <p>Actors: {{singleMovie.Actors}}</p>
+          <p>{{singleMovie.Plot}}</p>
+          <h4>Additional Details</h4>
+          <h5>Awards</h5>
+          <p>{{singleMovie.Awards}}</p>
+          <h5>Country</h5>
+          <p>{{singleMovie.Country}}</p>
+          <h5>Director</h5>
+          <p>{{singleMovie.Director}}</p>
+          <h5>Genre</h5>
+          <p>{{singleMovie.Genre}}</p>
+          <h5>Language</h5>
+          <p>{{singleMovie.Language}}</p>
+          <h5>Metascore</h5>
+          <p>{{singleMovie.Metascore}}</p>
+          <h5>Rated</h5>
+          <p>{{singleMovie.Rated}}</p>
+          <h5>Released</h5>
+          <p>{{singleMovie.Released}}</p>
+          <h5>Runtime</h5>
+          <p>{{singleMovie.Runtime}}</p>
+          <h5>Writer</h5>
+          <p>{{singleMovie.Writer}}</p>
+          <h5>Year</h5>
+          <p>{{singleMovie.Year}}</p>
+          <h5>IMDB Rating</h5>
+          <p>{{singleMovie.imdbRating}}</p>
+          <h5>IMDB Votes</h5>
+          <p>{{singleMovie.imdbVotes}}</p>
+        </div>
+      <!-- </div> -->
+  </div>
+</div>
+

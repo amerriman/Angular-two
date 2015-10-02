@@ -35,6 +35,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/filters.html',
         controller: 'myController'
       })
+      .when('/movies', {
+        templateUrl: 'partials/movies.html',
+        controller: 'moviesController'
+      })
       // //not working
       // .when('/calculator/add/?x=4&y=10', {
       // templateUrl: 'partials/calculator.html',
@@ -49,9 +53,4 @@ app.config(function($routeProvider) {
 });
 
 
-// Given:
-// URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby
-// Route: /Chapter/:chapterId/Section/:sectionId
-//
-// Then
-// $routeParams ==> {chapterId:'1', sectionId:'2', search:'moby'}
+

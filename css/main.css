@@ -1,0 +1,23 @@
+.centered {
+  text-align:center;
+}
+
+.outline {
+  border: 1px solid #C0C0C0;
+  border-radius: 10px;
+  margin: 5px;
+  width: 300px;
+  height: 100px;
+}
+
+.left {
+  text-align: left;
+}
+
+p {
+  color: #C0C0C0;
+}
+
+.blocks {
+  display: inline-block;
+}
