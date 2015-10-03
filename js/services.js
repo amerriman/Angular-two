@@ -1,53 +1,50 @@
+app.factory('ContactList', function() {
+  var ContactList = {};
+
+  ContactList.contacts = [
+    {
+      name: "Alice",
+      email: "Alice@wonderland.com",
+      phone: "123-456-7890"
+    },
+    {
+      name: "Jack",
+      email: "farmboy@beanstalk.com",
+      phone: "321-654-0987"
+    },
+    {
+      name: "Susie",
+      email: "cutie@que.com",
+      phone: "987-678-4321"
+    }
+  ];
+
+  ContactList.addContact = function($scope) {
+    if($scope.newPerson.$valid){
+      var newInfo=
+        {
+          name: $scope.name,
+          email: $scope.email,
+          phone: $scope.phone,
+        };
+        // console.log(newInfo);
+      ContactList.contacts.push(newInfo);
+    }
+  };
+
+  ContactList.findContact = function(name) {
+    // TODO
+  };
+
+  ContactList.removeContact = function(index) {
+    // TODO
+  };
+
+  return ContactList;
+});
+
+
 // app.factory('ContactList', function() {
-//   var ContactList = {};
-
-//   ContactList.contacts = [];
-
-//   ContactList.addContact = function(obj) {
-//     ContactList.contactList.push(obj);
-//   };
-
-//   ContactList.findContact = function(name) {
-//     // TODO
-//   };
-
-//   ContactList.removeContact = function(index) {
-//     // TODO
-//   };
-
-//   return ContactList;
-// });
-
-
-
-
-
-// app.factory('ContactList', function() {
-//   var ContactList = {};
-
-//   ContactList.contacts = [
-//     {
-//       name: "Harry Potter",
-//       email: "theBoyWhoLived@hogwarts.edu",
-//       phone: "555-890-5234",
-//       id: 0,
-//       image: 'https://media.giphy.com/media/10FzkePmCE8aGI/giphy.gif'
-//     },
-//     {
-//       name: "Ron Weasley",
-//       email: "hotGinger@hogwarts.edu",
-//       phone: "555-432-6544",
-//       id: 1,
-//       image: 'https://media.giphy.com/media/Kedk795ATlgYM/giphy.gif'
-//     },
-//     {
-//       name: "Remus Lupin",
-//       email: "howlAtTheMoon@hogwarts.edu",
-//       phone: "555-412-9808",
-//       id: 2,
-//       image: 'https://media.giphy.com/media/7gZX4Q4qQxnvG/giphy.gif'
-//     }
-//   ];
 
 //   ContactList.addContact = function($scope, $http) {
 //     if($scope.newContactData.$valid){

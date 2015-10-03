@@ -122,50 +122,16 @@ app.controller('moviesController', ['$scope', '$http', function($scope, $http){
 
 
 
-// app.controller('ContactsApp', ['$scope', '$http', 'ContactList', function($scope, $http, ContactList){
-//     $scope.contacts = ContactList.contacts;
-//     $scope.newContact = function(){
-//       ContactList.addContact($scope, $http);
-//     };
-// }]);
 
 
-app.controller("contacts", function($scope){
 
-  $scope.contacts = [
-    {
-      name: "Alice",
-      email: "Alice@wonderland.com",
-      phone: "123-456-7890"
-    },
-    {
-      name: "Jack",
-      email: "farmboy@beanstalk.com",
-      phone: "321-654-0987"
-    },
-    {
-      name: "Susie",
-      email: "cutie@que.com",
-      phone: "987-678-4321"
-    }
-  ];
+app.controller("contacts", ['$scope', 'ContactList', function($scope, ContactList){
+  $scope.contacts = ContactList.contacts;
+  $scope.newContact = function(){
+      ContactList.addContact($scope);
+   };
 
-  $scope.addContact = function(){
-    if($scope.newPerson.$valid){
-      var newInfo=
-        {
-          name: $scope.name,
-          email: $scope.email,
-          phone: $scope.phone,
-        };
-      $scope.contacts.push(newInfo);
-      // $scope.newPerson.$setPristine();
-      // $scope.newPerson.$setUntouched();
-      // $scope.newPerson.$setValidity();
-
-    }
-  };
-});
+}]);
 //end contacts
 
 
