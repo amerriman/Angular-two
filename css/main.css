@@ -26,3 +26,7 @@ p {
 .blocks {
   display: inline-block;
 }
+
+.alert {
+  color:red;
+}

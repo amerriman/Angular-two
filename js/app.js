@@ -39,6 +39,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/movies.html',
         controller: 'moviesController'
       })
+      .when('/contacts', {
+        templateUrl: 'partials/contacts.html',
+        controller: 'contacts'
+      })
       // //not working
       // .when('/calculator/add/?x=4&y=10', {
       // templateUrl: 'partials/calculator.html',

@@ -86,26 +86,26 @@ app.controller('Api', function($scope, $http){
 
 });
 
-app.controller('moviesController', function($scope, $http){
+
+app.controller('moviesController', ['$scope', '$http', function($scope, $http){
   $scope.allMovies = false;
   $scope.singleMovie = false;
+  $scope.none = false;
 
   $scope.findMovie = function(){
     var movieTitle = $scope.movieTitle;
+    $scope.none = false;
     console.log($scope.movieTitle);
     $http.get('http://www.omdbapi.com/?type=movie&s='+ movieTitle)
       .success(function(data){
         $scope.movies = data.Search;
+        if(data.Search === undefined){
+          $scope.none = true;
+        }
         console.log($scope.movies);
-    $scope.allMovies = true;
-
-
-        //get the imdbID from the json for each movie so the user can get more info on click
-
-        //make each title clickable and on that click it does an in-depth search with the imdbid
+        $scope.allMovies = true;
       });
   };
-
 
 
   $scope.movieDetails = function(){
@@ -117,8 +117,56 @@ app.controller('moviesController', function($scope, $http){
     });
   };
 
+}]);
 
+
+
+
+// app.controller('ContactsApp', ['$scope', '$http', 'ContactList', function($scope, $http, ContactList){
+//     $scope.contacts = ContactList.contacts;
+//     $scope.newContact = function(){
+//       ContactList.addContact($scope, $http);
+//     };
+// }]);
+
+
+app.controller("contacts", function($scope){
+
+  $scope.contacts = [
+    {
+      name: "Alice",
+      email: "Alice@wonderland.com",
+      phone: "123-456-7890"
+    },
+    {
+      name: "Jack",
+      email: "farmboy@beanstalk.com",
+      phone: "321-654-0987"
+    },
+    {
+      name: "Susie",
+      email: "cutie@que.com",
+      phone: "987-678-4321"
+    }
+  ];
+
+  $scope.addContact = function(){
+    if($scope.newPerson.$valid){
+      var newInfo=
+        {
+          name: $scope.name,
+          email: $scope.email,
+          phone: $scope.phone,
+        };
+      $scope.contacts.push(newInfo);
+      // $scope.newPerson.$setPristine();
+      // $scope.newPerson.$setUntouched();
+      // $scope.newPerson.$setValidity();
+
+    }
+  };
 });
+//end contacts
 
 
 
