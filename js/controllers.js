@@ -121,16 +121,24 @@ app.controller('moviesController', ['$scope', '$http', function($scope, $http){
 
 
 
-
-
-
-
 app.controller("contacts", ['$scope', 'ContactList', function($scope, ContactList){
   $scope.contacts = ContactList.contacts;
+  //Below does not work on its own
+  // ContactList.addContact($scope);
   $scope.newContact = function(){
       ContactList.addContact($scope);
    };
 
+}]);
+
+app.controller("showContact", ['$scope', '$routeParams', 'ContactList', function($scope, $routeParams, ContactList){
+  // $scope.singleContact = "test";
+
+  var id = $routeParams.id;
+  $scope.singleContact = ContactList.contacts[id];
+  console.log($scope.singleContact, "singleContact");
+  // console.log($routeParams.id, "route params id");
+  // ContactList.findContact($scope, id);
 }]);
 //end contacts
 

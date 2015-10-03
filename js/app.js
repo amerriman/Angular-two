@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
       .when('/', {
@@ -43,6 +43,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/contacts.html',
         controller: 'contacts'
       })
+      .when('/contacts/:id', {
+        templateUrl: 'partials/showContact.html',
+        controller: 'showContact'
+      })
       // //not working
       // .when('/calculator/add/?x=4&y=10', {
       // templateUrl: 'partials/calculator.html',
@@ -54,7 +58,7 @@ app.config(function($routeProvider) {
 
  // $locationProvider.html5Mode(true);
 
-});
+}]);
 
 
 

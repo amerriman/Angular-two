@@ -34,7 +34,7 @@
                 </tr>
             </thead>
                 <tr  ng-repeat="contact in contacts | filter: namesearch ">
-                    <td> {{contact.name}}</td>
+                    <td> <a href="#/contacts/{{contact.id}}">{{contact.name}}</a></td>
                     <td> {{contact.email}}</td>
                     <td> {{contact.phone}}</td>
                 </tr>
